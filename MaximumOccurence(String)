@@ -1,0 +1,24 @@
+//FIND THE MAXIMUM OCCURENCE CHARACTER IN A STRING AND ITS OCCURENCE 
+//MY SOLUTION
+  void repeatedChar(String str)
+      {
+          char stored=str.charAt(0);
+          int counter=0;
+           int[] freq = new int[str.length()];  
+          for(int i=0;i<str.length();i++){
+            char temp=str.charAt(i);//STORING THE VALUE FROM GIVEN STRING
+              int tempcount=0;
+              for(int j=0;j<str.length();j++){
+                  if(str.charAt(j)==temp){
+                      tempcount++;
+                     
+                  }
+                  if(tempcount>counter)
+                  {
+                      stored=temp;
+                      counter=tempcount;
+                  }
+              }
+              
+          }
+          System.out.println(stored+"   count is  "  +counter)
