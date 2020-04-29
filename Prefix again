@@ -1,0 +1,27 @@
+Given a string, consider the prefix string made of the first N chars of the string. Does that prefix string appear somewhere else in the string? 
+Assume that the string is not empty and that N is in the range 1..str.length().
+
+
+public boolean prefixAgain(String str, int n) {
+  String changed="";
+   int length=0;
+   Boolean t=false;
+   StringBuilder stored=new StringBuilder();
+  length=str.length();
+		changed=str;
+		changed=changed.substring(n,str.length());
+		
+		length=length-changed.length();
+		for(int i=0;i<length;i++){
+			stored.append(str.charAt(i));
+		}
+		
+		if(changed.contains(stored)){
+		
+			return true;
+		}
+		else{
+		  return false;
+		}
+	
+}
