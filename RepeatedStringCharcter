@@ -1,0 +1,21 @@
+public class Simple{
+public static void main(String args[]){
+String a="aaab";
+String b="aab";
+int cnt = 0;
+char[] inp = a.toCharArray();
+  StringBuilder sb=new StringBuilder();
+          for (int i = 0; i < a.length(); i++) {
+   for (int j = i + 1; j < a.length(); j++) {
+    if (inp[i] == inp[j]) {
+    
+    sb.append(inp[j]);
+     cnt++;
+     break;
+    }
+   }
+  }
+System.out.println(sb);
+}
+
+}
