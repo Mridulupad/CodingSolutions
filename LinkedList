@@ -1,0 +1,31 @@
+package com.mridul.datastructure;
+
+public class LinkedList {
+  Node head;
+  static class Node{
+	  int data;//will of node
+	  Node next;//node inside node which contain address of next node
+	  Node(int d){
+		  data=d;
+		  next=null;
+	  }
+  }
+  public void displayData(){
+	  Node n=head;//will contain first node data 
+	  while(n!=null){//Travese node and check until last node ie.null
+		  System.out.println("LINKED LIST IS: "+n.data);
+		  n=n.next;
+	  }
+  }
+  public static void main(String [] args){
+	  LinkedList list=new LinkedList();
+	  list.head=new Node(10);
+	  Node second=new Node(20);
+	  Node third=new Node(30);
+    //MAKING CONNECTION BETWEEN NODE ie.first node will point to second and so on
+	  list.head.next=second;
+	  second.next=third;
+	  list.displayData();
+	  
+  }
+}
