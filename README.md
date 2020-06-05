@@ -1,3 +1,3 @@
 # Coding_solutions
-Random coding problems from difrrent source
+Random coding problems from different source
 
