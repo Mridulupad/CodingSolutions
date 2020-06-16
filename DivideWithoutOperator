@@ -1,0 +1,61 @@
+Given two integers dividend and divisor, divide two integers without using multiplication, division and mod operator.
+
+Return the quotient after dividing dividend by divisor.
+
+The integer division should truncate toward zero, which means losing its fractional part. For example, truncate(8.345) = 8 and truncate(-2.7335) = -2.
+
+
+public class DividewithoutOperator {
+	public void dividewithoutOperator(int dividend, int divisor) {
+		int max = 0;
+		if (divisor > 0) {
+			if (dividend > 0) {
+				for (int i = 1; i <= divisor; i++) {
+					if ((divisor * i) <= dividend) {
+						max = i;
+
+					}
+				}
+			}
+				else{
+					int dividendChange = Math.abs(dividend);
+					for (int i = 1; i <= divisor; i++) {
+						if ((divisor * i) <= dividendChange) {
+							max = i;
+							dividendChange=-max;
+						}
+					}
+					max=dividendChange;
+				
+			}
+
+		} else {
+			int no = Math.abs(divisor);
+			int converted = 0;
+			if (dividend > 0) {
+				for (int i = 1; i <= no; i++) {
+					if ((no * i) <= dividend) {
+						max = i;
+						converted = -max;
+
+					}
+				}
+				max = converted;
+			}
+			else{
+				int dividendChange = Math.abs(dividend);
+				for (int i = 1; i <= divisor; i++) {
+					if ((divisor * i) <= dividendChange) {
+						max = i;
+						dividendChange=-max;
+					}
+				}
+				max=dividendChange;
+			}
+
+		
+
+		}
+
+		System.out.println(max);
+	}
